@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<graphics.h>
 
 typedef struct
 {
@@ -41,6 +42,11 @@ int knapsack(int i, double value, double weight, double volume)
 
 int main()
 {
+
+    int gd = DETECT, gm;
+
+    initgraph(&gd, &gm, NULL);
+
 //    int n_items, k=0, m=0;
 //    printf("Enter the number of constraints: ");
 //    scanf("%d", n_items);
@@ -76,5 +82,19 @@ int main()
     printf("Best Value: %.0f\n", best_value);
     free(count);
     free(best);
+
+
+
+    // pieslice function
+    pieslice(300, 300, 0, 120, 150);
+
+    getch();
+
+    closegraph();
+
+    //to run the programme  gcc 1_knapsack_DSA_EPJ.c -o 1_knapsack -lgraph
+    // ./sample
+
+    return 0;
     return 0;
 }
