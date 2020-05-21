@@ -78,23 +78,21 @@ int main()
     for (i=0;i<n;i++)
     {
         printf("%d %s\n", best[i], items[i].name);
+        pieslice(300, 300, 0, 120, 150);
     }
     printf("Best Value: %.0f\n", best_value);
     free(count);
     free(best);
 
-
-
     // pieslice function
-    pieslice(300, 300, 0, 120, 150);
+    //pieslice(300, 300, 0, 120, 150);
 
     getch();
 
     closegraph();
 
-    //to run the programme  gcc 1_knapsack_DSA_EPJ.c -o 1_knapsack -lgraph
+    //to run the program  gcc 1_knapsack_DSA_EPJ.c -o 1_knapsack -lgraph
     // ./sample
 
-    return 0;
     return 0;
 }
