@@ -1,0 +1,5 @@
+Rice,1808,72.3,40
+Wheat,2577,68.8,26.7
+Maize,1637,59.3,25.7
+Bajra,779,27.5,19.6
+Miscellaneous_Cereals,1071,45.7,24
