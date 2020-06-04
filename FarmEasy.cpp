@@ -287,7 +287,7 @@ int knapsack(int i, int yield, int k_budget, int k_area)
 int visualisation()
 {
     cout << "A visual representation:\n\n";
-    int i = 0, j=0, k=0, tbp_c = 0, total = 0;
+    int i = 0, j=0, k=0, tbp_c = 0, total = 0, exp = 0;
     string *tobeplanted;
     int *tbp_l;
     char keys[5] = {'#', '*', '@', '^', '&'};
@@ -297,9 +297,11 @@ int visualisation()
         {
             tbp_c++;
             total += Crop[i].area*best[i];
+            exp += Crop[i].capital*best[i];
         }
     }
     cout << "Total Area Planted: "<< total << endl;
+    cout << "Total Expenditure: "<< exp << endl;
     //tobeplanted = new string[tbp_c];
     //tbp_l = new int [tbp_c];
     cout << "Keys: \n";
