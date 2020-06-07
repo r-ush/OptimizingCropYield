@@ -39,7 +39,7 @@ int main()
 int MainMenu()
 {
     int option;
-    cout << "1. New Farmer\n"
+    cout << "1. Plan a Farm\n"
         // << "2. Existing Farmer\n"
          << "2. Access Farmer Database\n"
          << "3. Access Crop Database\n"
@@ -57,12 +57,12 @@ int MainMenu()
             string Fname, line;
             cout << "Enter Farmer Name: ";
             cin >> Fname;
-            cout << "Welcome, " << Fname << "!\n";
+            cout << "\nWelcome, " << Fname << "!\n\n";
             //file << Fname << endl; //File Handling test
             int budget, area;
             cout << "Please Enter the Expenditure Budget (in Rupees): ";
             cin >> budget;
-            cout << "Please Enter the Area of Land to be used (in meter square): ";
+            cout << "\nPlease Enter the Area of Land to be used (in meter square): ";
             cin >> area;
 
             file.open("CropDatabase.csv", ios::app | ios::out | ios::in);
@@ -119,10 +119,10 @@ int MainMenu()
 
             ///printing out cropwise result
             int j = 0;
-            cout << "Crop Count" << "\t" << "Crop Name" << "\t" << "Area" << endl;
+            cout << "Crop Count" << "\t" << "Crop Name" << "\t" << "Area" << "\t\t" << "Cost" << endl;
             for (j = 0; j < ::count ; j++)
             {
-                cout << best[j] << "\t\t" << Crop[j].name << "\t\t" << Crop[j].area*best[j] << endl;
+                cout << best[j] << "\t\t" << Crop[j].name << "\t\t" << Crop[j].area*best[j] << "\t\t" << Crop[j].capital*best[j] << endl;
             }
 
             //OptimizedYield = knapsack()[0];
@@ -308,6 +308,7 @@ int visualisation()
     int l = 0;
     for (i = 0; i < ::count ; i++)
     {
+
         if (::best[i] > 0)
         {
             double perf = ((float(Crop[i].area)*float(best[i]))/float(total))*100;
